@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('accounts', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('account_name', 250);
             $table->decimal('balance', $precision = 10, $scale = 2);

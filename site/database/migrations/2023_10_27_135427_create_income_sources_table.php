@@ -14,7 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('income_sources', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('income_sources_name', 250)->comment('джерело доходу');
+            $table->unsignedInteger('user_id');
+
+            // Foreign Key
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

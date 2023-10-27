@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('financial_plan', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('amoun', $precision = 10, $scale = 2);
+            $table->decimal('amount', $precision = 10, $scale = 2);
             $table->date('date');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('currency_id');
 
+            // Foreign Keys
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade')->onUpdate('cascade');
@@ -32,6 +33,8 @@ return new class extends Migration
             $table->foreign('currency_id')
                 ->references('id')->on('currencies')
                 ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->timestamps();
         });
     }
 
