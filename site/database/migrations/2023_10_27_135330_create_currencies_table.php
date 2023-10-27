@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('currencies', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->enum('currency_name', ['гривня', 'долар', 'євро'])->default('гривня');
+            $table->enum('symbol', ['&#8372;', '$', '€'])->default('&#8372;');
+            $table->enum('code', ['UAH', 'USD', 'EUR'])->default('UAH');
             $table->timestamps();
         });
     }
