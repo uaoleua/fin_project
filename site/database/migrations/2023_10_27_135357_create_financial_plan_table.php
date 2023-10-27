@@ -17,22 +17,22 @@ return new class extends Migration
             $table->increments('id');
             $table->decimal('amount', $precision = 10, $scale = 2);
             $table->date('date');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('category_id');
-            $table->unsignedInteger('currency_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('category_id')->unsigned();
+            $table->integer('currency_id')->unsigned();
 
             // Foreign Keys
             $table->foreign('user_id')
                 ->references('id')->on('users')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->foreign('category_id')
                 ->references('id')->on('categories')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->foreign('currency_id')
                 ->references('id')->on('currencies')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->timestamps();
         });

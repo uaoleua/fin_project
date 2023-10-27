@@ -20,24 +20,24 @@ return new class extends Migration
             $table->date('timestamp');
             $table->decimal('amount', $precision = 10, $scale = 2);
             $table->enum('type', ['plus', 'minus']);
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('account_id');
-            $table->unsignedInteger('category_id')->nullable();
-            $table->unsignedInteger('income_source_id')->nullable();
-            $table->unsignedInteger('currency_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('account_id')->unsigned();
+            $table->integer('category_id')->nullable()->unsigned();
+            $table->integer('income_source_id')->nullable()->unsigned();
+            $table->integer('currency_id')->unsigned();
 
             // Foreign keys
             $table->foreign('user_id')
                 ->references('id')->on('users')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->foreign('account_id')
                 ->references('id')->on('accounts')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->foreign('category_id')
                 ->references('id')->on('categories')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->foreign('income_source_id')
                 ->references('id')->on('income_sources')
@@ -45,7 +45,7 @@ return new class extends Migration
 
             $table->foreign('currency_id')
                 ->references('id')->on('currencies')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->timestamps();
         });
