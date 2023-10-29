@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body  style="background-color: #a0aec0; min-height: 100vh">
+<body  style="background-color: #b3c3d3; min-height: 100vh">
 @section('menu')
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #4a5568; padding: 15px 50px">
         <div class="container-fluid">
@@ -20,21 +20,21 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     @if (auth()->check() && auth()->user()->role == 'admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Categories</a>
+                            <a class="nav-link" href="{{ url('/') }}">Категорії</a>
                         </li>
                     @endif
                     @if (auth()->check() && (auth()->user()->role == 'admin' || auth()->user()->role == 'user'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Income Sources</a>
+                            <a class="nav-link" href="{{ url('/') }}">Джерела доходу</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Accounts</a>
+                            <a class="nav-link" href="{{ url('/') }}">Гаманці</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Transactions</a>
+                            <a class="nav-link" href="{{ url('/') }}">Операції</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Financial Plans</a>
+                            <a class="nav-link" href="{{ url('/') }}">Фінансовий план</a>
                         </li>
                     @endif
                 </ul>
@@ -44,10 +44,10 @@
         <div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" style="width: 65px">
-                    <a class="nav-link" href="{{ url('/login') }}">Log in</a>
+                    <a class="nav-link" href="{{ url('/login') }}">Вхід</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                    <a class="nav-link" href="{{ url('/register') }}">Реєстрація</a>
                 </li>
             </ul>
         </div>
