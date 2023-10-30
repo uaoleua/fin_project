@@ -33,3 +33,5 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/',[\App\Http\Controllers\HomeController::class,"index"])->name("home.index");
+//Route::get("category/index",[\App\Http\Controllers\CategoryController::class,"index"])->name("category.index");
+Route::resource('/category', \App\Http\Controllers\CategoryController::class);

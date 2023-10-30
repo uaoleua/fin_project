@@ -20,7 +20,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     @if (auth()->check() && auth()->user()->role == 'admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Категорії</a>
+                            <a class="nav-link" href="{{ url('/category') }}">Категорії</a>
                         </li>
                     @endif
                     @if (auth()->check() && (auth()->user()->role == 'admin' || auth()->user()->role == 'user'))
