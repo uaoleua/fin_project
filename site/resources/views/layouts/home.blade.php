@@ -25,7 +25,7 @@
                     @endif
                     @if (auth()->check() && (auth()->user()->role == 'admin' || auth()->user()->role == 'user'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Джерела доходу</a>
+                            <a class="nav-link" href="{{ url('/incomeSource') }}">Джерела доходу</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Гаманці</a>
@@ -62,3 +62,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
+

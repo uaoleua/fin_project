@@ -59,11 +59,11 @@ class CategoryController extends Controller
         return redirect()->route('category.index')->with('message','Вашу категорію було змінено');
     }
 
-    public function destroy(Category $category) {
+    public function destroy(Category $category)
+    {
         $category->delete();
 
         return redirect()->route('category.index')->with('message','Категорію видалено успішно!');
-
     }
 
 }
