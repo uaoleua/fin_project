@@ -7,11 +7,7 @@
 
 @section('content')
     <div class="container text-center" style="margin: 50px auto">
-        <h4>Джерела доходів
-            @if(!auth()->check()){{""}}
-            @elseif (Auth::user()->user_name)
-            @endif
-        </h4>
+        <h4>Джерела доходів</h4>
 
         @if(session('errors') && count(session('errors'))>0)
             @foreach(session('errors')->all() as $err)
@@ -31,13 +27,15 @@
             <form action="{{ route('incomeSource.store') }}"  method="POST" style=" margin: 30px auto; width: 700px">
                 @csrf
                 <div class="mb-3" style="text-align: start">
-                    <label for="income_sources_name">Для створення введіть назву джерела доходу і виберіть користувача:</label>
+                    <p>Створення нового джерела доходу:</p>
                 </div>
-                <div class="mb-3">
-                    <input type="text" name="income_sources_name" id="income_sources_name" placeholder="Назва" style="width: 100%">
+                <div class="mb-3" style="text-align: start">
+                    <label for="income_sources_name">Введіть назву:</label>
+                    <input type="text" name="income_sources_name" id="income_sources_name" style="width: 100%">
                 </div>
                 @if (auth()->check() && auth()->user()->role == 'admin')
-                    <div class="mb-3">
+                    <div class="mb-3" style="text-align: start">
+                        <label for="user_id">Виберіть:</label>
                         <select class="form-select" aria-label="Default select example" name="user_id" style="width: 100%">
                             <option value="0" >Користувач</option>
                             @foreach($users as $user)
@@ -46,7 +44,7 @@
                         </select>
                     </div>
                 @elseif(auth()->check() && auth()->user()->role == 'user')
-                    <div class="mb-3">
+                    <div class="mb-3" style="text-align: start">
                         <select class="form-select" aria-label="Default select example" name="user_id" style="width: 100%">
                             <option value="{{ auth()->user()->id }}">{{auth()->user()->user_name}}</option>
                         </select>

@@ -28,7 +28,7 @@
                             <a class="nav-link" href="{{ url('/incomeSource') }}">Джерела доходу</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Гаманці</a>
+                            <a class="nav-link" href="{{ url('/account') }}">Гаманці</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/') }}">Операції</a>
