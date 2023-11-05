@@ -37,3 +37,4 @@ Route::get('/',[\App\Http\Controllers\HomeController::class,"index"])->name("hom
 Route::resource('/category', \App\Http\Controllers\CategoryController::class);
 Route::resource('/incomeSource', \App\Http\Controllers\IncomeSourceController::class);
 Route::resource('/account', \App\Http\Controllers\AccountController::class);
+Route::resource('/financialPlan', \App\Http\Controllers\FinancialPlanController::class);

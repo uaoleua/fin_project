@@ -34,7 +34,7 @@
                             <a class="nav-link" href="{{ url('/') }}">Операції</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Фінансовий план</a>
+                            <a class="nav-link" href="{{ url('/financialPlan') }}">Фінансовий план</a>
                         </li>
                     @endif
                 </ul>

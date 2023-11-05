@@ -51,7 +51,7 @@ class AccountController extends Controller
 
         $account = Account::findOrFail($id);
         return view('account.edit', compact('account', 'users', 'incomeSources'));
-//        return view('incomeSource.edit', compact('incomeSource', 'users'));
+
     }
 
     public function update(Request $request, $id)

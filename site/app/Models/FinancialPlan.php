@@ -12,6 +12,7 @@ class FinancialPlan extends Model
 
     protected $table = 'financial_plan';
 
+    protected $dates = ['date', 'created_at', 'updated_at'];
     protected $fillable = [
         'amount',
         'date',
