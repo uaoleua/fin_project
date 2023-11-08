@@ -44,16 +44,8 @@
                             <small class="text-danger">{{ $errors->first('inputname') }}</small>
                         @endif
                     </div>
+
                     @if (auth()->check() && auth()->user()->role == 'admin')
-                        <div class="mb-3" style="margin-top: 30px">
-                            <label for="user_id" style="margin-bottom: 10px">Виберіть користувача:</label>
-                            <select class="form-select" aria-label="Default select example" name="user_id" style="width: 100%">
-                                <option value="{{$account->user->id }}" >{{$account->user->user_name}}</option>
-                                @foreach($users as $user)
-                                    <option value="{{ $user->id }}">{{$user->user_name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
                         <div class="mb-3" style="margin-top: 30px">
                             <label for="income_sources_id" style="margin-bottom: 10px">Виберіть джерело доходу:</label>
                             <select class="form-select" aria-label="Default select example" name="income_sources_id" style="width: 100%">
@@ -63,13 +55,17 @@
                                 @endforeach
                             </select>
                         </div>
-                    @elseif(auth()->check() && auth()->user()->role == 'user')
                         <div class="mb-3" style="margin-top: 30px">
-                            <label for="user_id" style="margin-bottom: 10px">Користувач:</label>
+                            <label for="user_id" style="margin-bottom: 10px">Виберіть користувача:</label>
                             <select class="form-select" aria-label="Default select example" name="user_id" style="width: 100%">
-                                <option value="{{ auth()->user()->id }}">{{auth()->user()->user_name}}</option>
+                                <option value="{{$account->user->id }}" >{{$account->user->user_name}}</option>
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}">{{$user->user_name}}</option>
+                                @endforeach
                             </select>
                         </div>
+
+                    @elseif(auth()->check() && auth()->user()->role == 'user')
                         <div class="mb-3" style="margin-top: 30px">
                             <label for="income_sources_id" style="margin-bottom: 10px">Виберіть джерело доходу:</label>
                             <select class="form-select" aria-label="Default select example" name="income_sources_id" style="width: 100%">
@@ -79,6 +75,12 @@
                                         <option value="{{ $incomeSource->id }}">{{$incomeSource->income_sources_name}}</option>
                                     @endif
                                 @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3" style="margin-top: 30px">
+                            <label for="user_id" style="margin-bottom: 10px">Користувач:</label>
+                            <select class="form-select" aria-label="Default select example" name="user_id" style="width: 100%">
+                                <option value="{{ auth()->user()->id }}">{{auth()->user()->user_name}}</option>
                             </select>
                         </div>
                     @endif

@@ -45,7 +45,7 @@ class FinancialPlanController extends Controller
             $err=$financialPlan->getErrors();
             return redirect()->action([FinancialPlan::class, 'index'])->with('errors',$err)->withInput();
         }
-        return redirect()->route('financialPlan.index')->with('message','Ваш гаманець успішно створено!');
+        return redirect()->route('financialPlan.index')->with('message','Ваш фінансовий план успішно створено!');
 
     }
 

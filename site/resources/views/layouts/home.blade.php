@@ -8,9 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body  style="background-color: #b3c3d3; min-height: 100vh">
+<body  style="background-color: #b3c3d3">
 @section('menu')
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #4a5568; padding: 15px 50px">
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #4a5568; padding: 15px 50px; position: fixed; top: 0; left: 0; width: 100%; height: 60px; z-index: 1000">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}" >My Finances</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
                             <a class="nav-link" href="{{ url('/account') }}">Гаманці</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">Операції</a>
+                            <a class="nav-link" href="{{ url('/transaction') }}">Операції</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/financialPlan') }}">Фінансовий план</a>
@@ -55,7 +55,7 @@
     </nav>
 @show
 
-<main>
+<main style="margin-top: 100px">
     {{-- Content --}}
     @yield('content')
 </main>

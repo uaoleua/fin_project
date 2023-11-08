@@ -54,7 +54,7 @@
                     <button type="submit" style="width: 100px">Створити</button>
                 </div>
             </form>
-            <table class="table table-striped" style="width: 700px; margin: 0 auto">
+            <table class="table table-striped" style="width: 100%; margin: 0 auto">
                 <thead>
                 <tr>
                     <th>ID</th>

@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="container text-center" style="margin: 50px auto">
-        <h4>Категорії для користувача - {{ Auth::user()->user_name }}</h4>
+        <h4>Категорії для користувача</h4>
 
         @if(session('errors') && count(session('errors'))>0)
             @foreach(session('errors')->all() as $err)
@@ -30,7 +30,7 @@
                 <input type="text" name="category_name" id="category_name" required style="width: 400px">
                 <button type="submit" style="width: 100px">Створити</button>
             </form>
-            <table class="table table-striped" style="width: 700px; margin: 0 auto">
+            <table class="table table-striped" style="width: 100%; margin: 0 auto">
                 <thead>
                     <tr>
                         <th>ID</th>

@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="container text-center" style="margin: 50px auto">
-    <div class="row" style="width: 80%; margin: 0 auto">
+    <div class="row" style="width: 100%; margin: 0 auto">
     <h2 style="font-size: 24px; font-weight: 600; margin-bottom: 30px">Як правильно вести свої фінанси</h2>
     <p style="font-weight: 500; margin-bottom: 50px"><em>“Ви маєте навчитись управляти власними грошима, або їх нестача буде до кінця життя управляти вами” - Роберт Кійосакі</em></p>
     <div class="col">
