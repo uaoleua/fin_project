@@ -39,3 +39,5 @@ Route::resource('/incomeSource', \App\Http\Controllers\IncomeSourceController::c
 Route::resource('/account', \App\Http\Controllers\AccountController::class);
 Route::resource('/financialPlan', \App\Http\Controllers\FinancialPlanController::class);
 Route::resource('/transaction', \App\Http\Controllers\TransactionController::class);
+
+Route::get('/financial', [\App\Http\Controllers\FinancialController::class, 'index']) -> name('financial');

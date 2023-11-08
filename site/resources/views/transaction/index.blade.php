@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'FinPlan')
+@section('title', 'Transaction')
 
 @section('menu')
     @parent
@@ -24,7 +24,7 @@
             </div>
         @endif
 
-        <div class="row m-3" >
+        <div >
             <form action="{{ route('transaction.store') }}"  method="POST" style=" margin: 30px auto; width: 700px">
                 @csrf
                 <div class="mb-3" style="text-align: start">
@@ -132,6 +132,10 @@
                 </div>
             </form>
 
+            <div style="text-align: end">
+                <button style="width: 400px; height: 50px; margin: 50px auto; background-color: gold"><a href="{{ route('financial') }}" style="text-decoration: none; color: black; font-weight: 600">Переглянути ваш баланс</a></button>
+            </div>
+
             <table class="table table-striped" style="width: 100%; margin: 0 auto">
                 <thead>
                 <tr>
@@ -227,5 +231,6 @@
             </table>
 
         </div>
+
     </div>
 @endsection

@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'FinPlan')
+@section('title', 'Transaction')
 
 @section('menu')
     @parent
