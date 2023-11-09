@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('currencies', function (Blueprint $table) {
             $table->increments('id');
             $table->enum('currency_name', ['гривня', 'долар', 'євро'])->default('гривня');
-            $table->enum('symbol', ['&#8372;', '$', '€'])->default('&#8372;');
+            $table->enum('symbol', ['₴', '$', '€'])->default('₴');
             $table->enum('code', ['UAH', 'USD', 'EUR'])->default('UAH');
             $table->timestamps();
         });
