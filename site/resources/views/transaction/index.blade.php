@@ -8,7 +8,7 @@
 @section('content')
     <div class="container text-center" style="margin: 50px auto">
 
-        <h4>Операції</h4>
+        <h3 style="font-weight: 600">Операції</h3>
 
         @if(session('errors') && count(session('errors'))>0)
             @foreach(session('errors')->all() as $err)
@@ -28,7 +28,7 @@
             <form action="{{ route('transaction.store') }}"  method="POST" style=" margin: 30px auto; width: 700px">
                 @csrf
                 <div class="mb-3" style="text-align: start">
-                    <p>Створення нової операції:</p>
+                    <h5>Створення нової операції:</h5>
                 </div>
                 <div class="mb-3" style="text-align: start">
                     <label for="description">Введіть назву (опис) вашої операції:</label>
@@ -132,9 +132,11 @@
                 </div>
             </form>
 
-            <div style="text-align: end">
-                <button style="width: 400px; height: 50px; margin: 50px auto; background-color: gold"><a href="{{ route('financial') }}" style="text-decoration: none; color: black; font-weight: 600">Переглянути ваш баланс</a></button>
-            </div>
+            @if (auth()->check() && auth()->user()->role == 'user')
+                <div style="text-align: end">
+                    <button style="width: 400px; height: 50px; margin: 50px auto; background-color: gold"><a href="{{ route('financial') }}" style="text-decoration: none; color: black; font-weight: 600">Переглянути ваш баланс</a></button>
+                </div>
+            @endif
 
             <table class="table table-striped" style="width: 100%; margin: 0 auto">
                 <thead>

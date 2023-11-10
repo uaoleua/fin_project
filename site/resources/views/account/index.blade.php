@@ -8,7 +8,7 @@
 @section('content')
     <div class="container text-center" style="margin: 50px auto">
 
-        <h4>Гаманці</h4>
+        <h3 style="font-weight: 600">Гаманці</h3>
 
         @if(session('errors') && count(session('errors'))>0)
             @foreach(session('errors')->all() as $err)
@@ -28,7 +28,7 @@
             <form action="{{ route('account.store') }}"  method="POST" style=" margin: 30px auto; width: 700px">
                 @csrf
                 <div class="mb-3" style="text-align: start">
-                    <p>Створення нового гаманця:</p>
+                    <h5>Створення нового гаманця:</h5>
                 </div>
                 <div class="mb-3"  style="text-align: start">
                     <label for="account_name">Введіть назву:</label>

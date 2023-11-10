@@ -43,9 +43,14 @@
 
         <div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                @if (auth()->check() && auth()->user())
                 <li class="nav-item" style="width: 65px">
+                    <a class="nav-link" href="{{ url('/login') }}">Вихід</a>
+                </li>
+                @else <li class="nav-item" style="width: 65px">
                     <a class="nav-link" href="{{ url('/login') }}">Вхід</a>
                 </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/register') }}">Реєстрація</a>
                 </li>

@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="container text-center" style="margin: 50px auto">
-        <h4>Фінансовий звіт</h4>
+        <h3 style="font-weight: 600">Фінансовий звіт</h3>
         <form action="{{ url('/financial') }}" method="GET" style=" margin: 30px 0; text-align: start; width: 400px">
             <div style="margin-bottom: 30px; width: 100%">
                 <label for="start_date">Виберіть період:</label>
@@ -36,10 +36,11 @@
                             <th>Витрати</th>
                             <th>Доходи</th>
                             <th>План</th>
-                            <th style="width: 15%">Виконання плану по категорії</th>
+                            <th style="width: 15%">Виконання плану по категорії (%)</th>
                         </tr>
                     </thead>
                     <tbody>
+
                     @foreach ($categories as $category)
                         @php
                             $categoryIncomes = $incomes[$category->id] ?? collect();

@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="container text-center" style="margin: 50px auto">
-        <h4>Категорії для користувача</h4>
+        <h3 style="font-weight: 600">Категорії</h3>
 
         @if(session('errors') && count(session('errors'))>0)
             @foreach(session('errors')->all() as $err)
@@ -24,11 +24,19 @@
         @endif
 
         <div class="row m-3" >
-            <form action="{{ route('category.store') }}"  method="POST" style=" margin: 30px auto">
+            <form action="{{ route('category.store') }}"  method="POST" style=" margin: 30px auto; width: 700px">
                 @csrf
-                <label for="category_name">Створюємо нову категорію:</label>
-                <input type="text" name="category_name" id="category_name" required style="width: 400px">
-                <button type="submit" style="width: 100px">Створити</button>
+                <div class="mb-3" style="text-align: start">
+                    <h5>Створюємо нову категорію:</h5>
+                </div>
+                <div class="mb-3"  style="text-align: start">
+                    <label for="category_name">Введіть назву:</label>
+                    <input type="text" name="category_name" id="category_name" required style="width: 100%">
+                </div>
+                <div class="mb-3" style="text-align: end">
+                    <button type="submit" style="width: 100px">Створити</button>
+                </div>
+
             </form>
             <table class="table table-striped" style="width: 100%; margin: 0 auto">
                 <thead>

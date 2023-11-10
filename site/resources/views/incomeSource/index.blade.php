@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="container text-center" style="margin: 50px auto">
-        <h4>Джерела доходів</h4>
+        <h3 style="font-weight: 600">Джерела доходів</h3>
 
         @if(session('errors') && count(session('errors'))>0)
             @foreach(session('errors')->all() as $err)
@@ -27,7 +27,7 @@
             <form action="{{ route('incomeSource.store') }}"  method="POST" style=" margin: 30px auto; width: 700px">
                 @csrf
                 <div class="mb-3" style="text-align: start">
-                    <p>Створення нового джерела доходу:</p>
+                    <h5>Створення нового джерела доходу:</h5>
                 </div>
                 <div class="mb-3" style="text-align: start">
                     <label for="income_sources_name">Введіть назву:</label>
