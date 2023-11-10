@@ -160,7 +160,7 @@
                     </div>
                 @endif
                 <div class="btn-group pull-right" >
-                    <button type="submit" class="btn btn-secondary" style="margin: 20px auto; font-weight: 600">Зберегти міни</button>
+                    <button type="submit" class="btn btn-secondary" style="margin: 20px auto; font-weight: 600">Зберегти зміни</button>
                 </div>
             </form>
         </div>
